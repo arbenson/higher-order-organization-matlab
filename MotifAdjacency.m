@@ -54,7 +54,8 @@ end
 
 function W = M1(A)
   [~, U, ~] = DirectionalBreakup(A);
-  W = (U * U) .* U;
+  C = (U * U) .* U';
+  W = C + C';
 end
 
 function W = M2(A)
